@@ -67,8 +67,6 @@ func learningPrimitivesAndDeclarations() {
 
 	fmt.Println("isInvalid:", isInvalid, "isValid:", isValid)
 
-	// String
-
 	// Arrays
 	a := [5]string { "Hello", "this", "is", "weird"} // declaring 1 less value
 
@@ -87,9 +85,6 @@ func learningPrimitivesAndDeclarations() {
 	fmt.Println(simpleMap["key2"])
 	fmt.Println(simpleMap["key3"])
 	fmt.Println(simpleMap["key4"]) // This does not exist but returns default value for int which is 0
-
-
-
 }
 
 // This is the same as x int, y int, z float32

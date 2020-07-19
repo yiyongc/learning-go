@@ -16,7 +16,7 @@ func main() {
 	fmt.Println("\n---- Running mapsExercise ----")
 	mapsExercise()
 	fmt.Println("\n---- Running passingFunctions ----")
-	var result  = passingFunctions(add, subtract)
+	var result = passingFunctions(add, subtract)
 	fmt.Println("Result:", result)
 	fmt.Println("\n---- Running closureFunctions ----")
 	closureFunctions()
@@ -31,7 +31,7 @@ type PosVertex struct {
 func learningMap() {
 	var myMap map[string]PosVertex // Create a map of key with type string and value PosVertex
 	fmt.Println("myMap default zero value:", myMap)
-	if (myMap == nil) {
+	if myMap == nil {
 		fmt.Println("myMap is nil")
 	}
 
@@ -40,7 +40,7 @@ func learningMap() {
 
 	myMap = make(map[string]PosVertex) // Initialize map
 	fmt.Println("myMap:", myMap)
-	if (myMap != nil) {
+	if myMap != nil {
 		fmt.Println("myMap is not nil after make")
 	}
 
@@ -50,9 +50,9 @@ func learningMap() {
 
 func mapInitialization() {
 	// Create map with values, make is not required?
-	var m = map[string]PosVertex {
-		"PosB": { 31.3131, 66.7788 },
-		"PosC": { 44.1212, 12.1234 },
+	var m = map[string]PosVertex{
+		"PosB": {31.3131, 66.7788},
+		"PosC": {44.1212, 12.1234},
 	}
 	fmt.Println("m:", m)
 	// PosD can be added
@@ -62,7 +62,7 @@ func mapInitialization() {
 
 func mutatingMaps() {
 	// Initialize a map with values
-	var m = map[string]string {
+	var m = map[string]string{
 		"foo": "exists",
 		"bar": "also exists",
 		"baz": "exists as well",
@@ -132,13 +132,13 @@ func subtract(x, y int) int {
 }
 
 func passingFunctions(fn func(int, int) int, fn2 func(int, int) int) int {
-	return 3 * fn(5, 6) - fn2(6, 2);
+	return 3*fn(5, 6) - fn2(6, 2)
 }
 
 func closureFunctions() {
 	closure1, closure2 := returnsClosure(), returnsClosure()
 	for i := 1; i <= 5; i++ {
-		fmt.Println("Multiply iteration ::", i, ":: closure 1 ::", closure1(i), ":: closure 2 ::", closure2(i * 2))
+		fmt.Println("Multiply iteration ::", i, ":: closure 1 ::", closure1(i), ":: closure 2 ::", closure2(i*2))
 	}
 }
 
@@ -146,7 +146,7 @@ func returnsClosure() func(x int) int {
 	multiplyResult := 5
 	// Notice EACH closure returned has its own "multiplyResult" variable
 	// Calling the SAME closure will modify its own multiplyResult value
-	return func (x int) int {
+	return func(x int) int {
 		multiplyResult *= x
 		return multiplyResult
 	}

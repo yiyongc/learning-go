@@ -12,18 +12,18 @@ import (
 
 // Package variables declaration
 var (
-	MyBool bool = false
-	MaxInt uint64 = 1 << 64 -1
-	MyFloat float64 = 6.969
+	MyBool  bool       = false
+	MaxInt  uint64     = 1<<64 - 1
+	MyFloat float64    = 6.969
 	zNumber complex128 = cmplx.Sqrt(-5 + 12i)
-	MyByte byte = byte('A') // alias for uint8
-	MyRune rune = '\a' // alias for int32, represents a Unicode code point
+	MyByte  byte       = byte('A') // alias for uint8
+	MyRune  rune       = '\a'      // alias for int32, represents a Unicode code point
 )
 
 func main() {
 	// This is the main function similar to java's public static void main(String[] args)
 	fmt.Println("---- Running HelloWorld ----")
-	HelloWorld()
+	helloWorld()
 	fmt.Println("\n---- Running learningPrimitivesAndDeclarations ----")
 	learningPrimitivesAndDeclarations()
 	fmt.Println("\n---- Running learningReturnTypes ----")
@@ -46,7 +46,7 @@ func main() {
 	playingWithDefer()
 }
 
-func HelloWorld() {
+func helloWorld() {
 	fmt.Println("Hello World!")
 	fmt.Println("Current time is ", time.Now())
 	fmt.Println("Limit 10 :: Current Rand: ", rand.Intn(10))
@@ -55,8 +55,8 @@ func HelloWorld() {
 
 func learningPrimitivesAndDeclarations() {
 	// Integers
-	var i int  // default value for an int is 0
-	j := 2	// Short hand for declaring variables with type inferred
+	var i int // default value for an int is 0
+	j := 2    // Short hand for declaring variables with type inferred
 	var k = 5 // Another way of declaring it
 
 	fmt.Println("i:", i, "j:", j, "k:", k)
@@ -68,7 +68,7 @@ func learningPrimitivesAndDeclarations() {
 	fmt.Println("isInvalid:", isInvalid, "isValid:", isValid)
 
 	// Arrays
-	a := [5]string { "Hello", "this", "is", "weird"} // declaring 1 less value
+	a := [5]string{"Hello", "this", "is", "weird"} // declaring 1 less value
 
 	fmt.Println(a[0])
 	fmt.Println(a[1])
@@ -127,8 +127,8 @@ func playingWithConstants() {
 	//bae = "no" // Not allowed as it is a const
 	fmt.Println("Bae?", bae)
 
-	const Big = 1 << 69 // Binary shift left 69 positions ;)
-	const Small = Big >> 68	// Binary shift right 68 positions
+	const Big = 1 << 69     // Binary shift left 69 positions ;)
+	const Small = Big >> 68 // Binary shift right 68 positions
 	fmt.Println(numericConstantsInt(Small))
 	fmt.Println(numericConstantsFloat(Small))
 	//fmt.Println(numericConstantsInt(Big)) // Not allowed as it is overflows int size
@@ -137,7 +137,7 @@ func playingWithConstants() {
 
 func numericConstantsInt(x int) int {
 	fmt.Println("x: ", x)
-	return x * 2 + 5
+	return x*2 + 5
 }
 
 func numericConstantsFloat(x float64) float64 {
@@ -171,7 +171,7 @@ func playingWithIfsAndLoops() {
 	// if condition with scoped local variable
 	if v := 33; v < total {
 		fmt.Println("V is less: ", v, "<", total)
- 	} else {
+	} else {
 		fmt.Println("V is more: ", v, ">", total)
 	}
 	// v = 6 // local variable no longer accessible
